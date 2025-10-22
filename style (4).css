@@ -1,0 +1,1075 @@
+/*
+Theme Name: Horror Film History Child
+Template: twentytwentyone
+Description: Custom horror film history theme - Clean, professional design
+Author: Karina Wilson
+Version: 2.0.0
+*/
+
+/* Import parent theme styles */
+@import url("../twentytwentyone/style.css");
+
+/* === GLOBAL STYLES === */
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: #000;
+    color: #e0e0e0;
+    line-height: 1.7;
+    overflow-x: hidden;
+    padding-top: 80px;
+}
+
+/* === TYPOGRAPHY === */
+h1, .site-content h1, .entry-content h1, article h1, main h1 {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.5rem;
+}
+
+h2, .site-content h2, .entry-content h2, article h2, main h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.25rem;
+}
+
+h3, .site-content h3, .entry-content h3, article h3, main h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+h4, .site-content h4, .entry-content h4, article h4, main h4 {
+    font-size: 1.25rem;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+h5, .site-content h5, .entry-content h5, article h5, main h5 {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+h6, .site-content h6, .entry-content h6, article h6, main h6 {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    color: #b0b0b0;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+a {
+    color: #ffa500;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #dc143c;
+}
+
+/* === CONTENT AREAS === */
+.site {
+    position: relative;
+    z-index: 1;
+}
+
+.site-content {
+    background: transparent;
+    padding-top: 200px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Homepage exception - no top padding needed */
+.horror-home .site-content {
+    padding-top: 0;
+}
+
+article {
+    background: #0a0a0a;
+    padding: 2.5rem 2rem;
+    margin-bottom: 2rem;
+    border-left: 2px solid #8b0000;
+    transition: border-color 0.3s;
+}
+
+article:hover {
+    border-left-color: #ffa500;
+}
+
+/* Prevent content from overlapping featured image on singular pages */
+.singular article > .entry-content {
+    position: relative;
+    z-index: 10;
+}
+
+.singular article > .post-thumbnail,
+.singular article > .entry-header > .post-thumbnail {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 4rem !important;
+    display: block;
+    width: 100%;
+}
+
+/* === POST/PAGE CONTENT === */
+.entry-content {
+    color: #e0e0e0;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.entry-content p {
+    color: #b0b0b0;
+    margin-bottom: 1.5rem;
+}
+
+.entry-title {
+    color: #fff;
+    font-family: 'Georgia', serif;
+}
+
+.entry-meta {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+/* === LISTS === */
+.entry-content ul,
+.entry-content ol {
+    margin: 1.5rem 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.entry-content li {
+    color: #b0b0b0;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+}
+
+.entry-content ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #8b0000;
+}
+
+.entry-content ol {
+    counter-reset: item;
+}
+
+.entry-content ol li {
+    counter-increment: item;
+}
+
+.entry-content ol li::before {
+    content: counter(item) ".";
+    position: absolute;
+    left: 0;
+    color: #8b0000;
+    font-weight: 600;
+}
+
+/* === IMAGES === */
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid rgba(139, 0, 0, 0.3);
+    display: block;
+}
+
+.wp-post-image,
+.entry-content img {
+    transition: all 0.3s;
+    margin-bottom: 2rem;
+}
+
+.wp-post-image:hover,
+.entry-content img:hover {
+    border-color: rgba(139, 0, 0, 0.6);
+    transform: translateY(-2px);
+}
+
+.post-thumbnail,
+.entry-header .post-thumbnail {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 0;
+}
+
+figure {
+    margin: 2rem 0;
+}
+
+figcaption,
+.wp-caption-text,
+.wp-element-caption {
+    color: #888 !important;
+    font-size: 0.9rem !important;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+/* Fix featured image overlap with fixed header */
+.wp-post-image {
+    margin-top: 0 !important;
+    position: relative !important;
+}
+
+article .wp-post-image,
+.entry-header .wp-post-image,
+.post-thumbnail img,
+.post-thumbnail {
+    margin-top: 0 !important;
+    position: relative !important;
+}
+
+/* Ensure article/entry header respects padding */
+article,
+.entry-header,
+.post-thumbnail {
+    margin-top: 0 !important;
+}
+
+/* Additional fix for any negative margins from parent theme */
+.single .post-thumbnail,
+.single .entry-header {
+    margin-top: 0 !important;
+}
+
+/* === BUTTONS === */
+button,
+.wp-block-button__link,
+input[type="submit"],
+.button,
+.cta-btn {
+    padding: 0.9rem 2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: 1px solid rgba(139, 0, 0, 0.5);
+    background: rgba(139, 0, 0, 0.1);
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+}
+
+button:hover,
+.wp-block-button__link:hover,
+input[type="submit"]:hover,
+.button:hover,
+.cta-btn:hover {
+    background: rgba(139, 0, 0, 0.2);
+    border-color: rgba(139, 0, 0, 0.7);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.cta-btn.primary {
+    background: #8b0000;
+    border-color: #8b0000;
+    color: #fff;
+}
+
+.cta-btn.primary:hover {
+    background: #a00000;
+}
+
+/* === SIDEBAR === */
+.widget {
+    background: #0a0a0a;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 2px solid #8b0000;
+}
+
+.widget-title {
+    color: #fff;
+    font-family: 'Georgia', serif;
+    font-size: 1.25rem;
+    border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.widget li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(139, 0, 0, 0.1);
+}
+
+.widget a {
+    color: #b0b0b0;
+    transition: color 0.3s;
+}
+
+.widget a:hover {
+    color: #fff;
+}
+
+/* === NAVIGATION/PAGINATION === */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+    gap: 1rem;
+}
+
+.nav-links a,
+.nav-links .page-numbers {
+    background: rgba(139, 0, 0, 0.1);
+    color: #b0b0b0;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid rgba(139, 0, 0, 0.3);
+    text-decoration: none;
+    transition: all 0.3s;
+    margin: 0 0.5rem;
+}
+
+@supports (gap: 1rem) {
+    .nav-links a,
+    .nav-links .page-numbers {
+        margin: 0;
+    }
+}
+
+.nav-links a:hover,
+.nav-links .page-numbers:hover,
+.nav-links .current {
+    background: rgba(139, 0, 0, 0.25);
+    border-color: rgba(139, 0, 0, 0.5);
+    color: #fff;
+}
+
+/* === ARCHIVE PAGES === */
+.archive-header,
+.page-header {
+    background: #0f0f0f;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 2px solid #8b0000;
+    border-bottom: 2px solid #8b0000;
+    margin-bottom: 3rem;
+}
+
+.archive-title,
+.page-title {
+    color: #fff;
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.archive-description {
+    color: #888;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* === FORMS === */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea,
+select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(139, 0, 0, 0.3);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(139, 0, 0, 0.5);
+    outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #666;
+}
+
+/* === COMMENTS === */
+.comment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comment {
+    background: #0a0a0a;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 2px solid #8b0000;
+}
+
+.comment-author {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.comment-meta {
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.comment-content {
+    color: #b0b0b0;
+    line-height: 1.7;
+}
+
+.comment-reply-link {
+    background: rgba(139, 0, 0, 0.2);
+    color: #e0e0e0;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(139, 0, 0, 0.4);
+    display: inline-block;
+    margin-top: 1rem;
+    transition: all 0.3s;
+}
+
+.comment-reply-link:hover {
+    background: rgba(139, 0, 0, 0.3);
+    color: #fff;
+}
+
+/* === BLOCKQUOTES === */
+blockquote {
+    border-left: 3px solid #8b0000;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: #999;
+}
+
+/* === TABLES === */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+}
+
+th {
+    background: rgba(139, 0, 0, 0.2);
+    color: #fff;
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid rgba(139, 0, 0, 0.3);
+}
+
+td {
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(139, 0, 0, 0.2);
+    color: #b0b0b0;
+}
+
+tr:hover {
+    background: rgba(139, 0, 0, 0.05);
+}
+
+/* === HEADER STYLES === */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(139, 0, 0, 0.4);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    height: 80px;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://horrorfilmhistory.com/wp/wp-content/uploads/2025/10/sepiafilm.webp');
+    opacity: 0.2;
+    z-index: -1;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(139, 0, 0, 0.5) 20%, 
+        rgba(139, 0, 0, 0.8) 50%, 
+        rgba(139, 0, 0, 0.5) 80%, 
+        transparent 100%);
+}
+
+nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+
+.logo {
+    font-family: 'Georgia', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 3px;
+    white-space: nowrap;
+    transition: all 0.3s;
+    position: relative;
+    text-shadow: 0 0 20px rgba(139, 0, 0, 0.6);
+}
+
+.logo::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #8b0000, #dc143c);
+    transition: width 0.4s;
+}
+
+.logo:hover {
+    text-shadow: 0 0 30px rgba(139, 0, 0, 0.9);
+}
+
+.logo:focus {
+    outline: 2px solid rgba(139, 0, 0, 0.6);
+    outline-offset: 4px;
+}
+
+.logo:hover::after {
+    width: 100%;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    flex: 1;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav .nav-links li {
+    position: relative;
+}
+
+nav .nav-links a,
+nav .nav-links button {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    background: rgba(139, 0, 0, 0.1);
+    border: 1px solid rgba(139, 0, 0, 0.3);
+    cursor: pointer;
+    font-family: inherit;
+    padding: 0.65rem 1.3rem;
+    border-radius: 3px;
+    position: relative;
+    display: block;
+}
+
+nav .nav-links a:hover,
+nav .nav-links button:hover,
+nav .nav-links a:focus,
+nav .nav-links button:focus {
+    color: #fff;
+    background: rgba(139, 0, 0, 0.25);
+    border-color: rgba(139, 0, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+nav .nav-links a:focus,
+nav .nav-links button:focus {
+    outline: 2px solid rgba(139, 0, 0, 0.6);
+    outline-offset: 2px;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(139, 0, 0, 0.3);
+    border-radius: 4px;
+    min-width: 240px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    padding: 0.75rem 0;
+    margin-top: 1rem;
+}
+
+nav .nav-links li:hover .dropdown,
+nav .nav-links li:focus-within .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdown li {
+    list-style: none;
+}
+
+.dropdown a {
+    display: block;
+    padding: 0.7rem 1.5rem;
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    border-left: 2px solid transparent;
+    border-radius: 0;
+    background: transparent;
+}
+
+.dropdown a:hover,
+.dropdown a:focus {
+    background: rgba(139, 0, 0, 0.15);
+    color: #fff;
+    border-left-color: #8b0000;
+    transform: none;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.search-input {
+    padding: 0.6rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(139, 0, 0, 0.3);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.9rem;
+    width: 200px;
+    transition: all 0.3s;
+}
+
+.search-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(139, 0, 0, 0.5);
+    box-shadow: 0 0 0 2px rgba(139, 0, 0, 0.2);
+}
+
+.search-input::placeholder {
+    color: #666;
+}
+
+.random-btn {
+    padding: 0.6rem 1.2rem;
+    background: rgba(139, 0, 0, 0.2);
+    border: 1px solid rgba(139, 0, 0, 0.4);
+    border-radius: 4px;
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.random-btn:hover {
+    background: rgba(139, 0, 0, 0.3);
+    border-color: rgba(139, 0, 0, 0.6);
+    color: #fff;
+}
+
+.random-btn:focus {
+    outline: 2px solid rgba(139, 0, 0, 0.6);
+    outline-offset: 2px;
+}
+
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-toggle:focus {
+    outline: 2px solid rgba(139, 0, 0, 0.6);
+    outline-offset: 2px;
+}
+
+.screen-reader-text {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:focus {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    background: #8b0000;
+    color: #fff;
+    z-index: 100000;
+    text-decoration: none;
+}
+
+/* === FOOTER STYLES === */
+footer {
+    background: #000;
+    border-top: 1px solid rgba(139, 0, 0, 0.2);
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+footer p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.footer-btn {
+    padding: 0.8rem 1.5rem;
+    background: rgba(139, 0, 0, 0.15);
+    border: 1px solid rgba(139, 0, 0, 0.3);
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-btn:hover {
+    background: rgba(139, 0, 0, 0.25);
+    border-color: rgba(139, 0, 0, 0.5);
+    color: #fff;
+}
+
+.footer-btn:focus {
+    outline: 2px solid rgba(139, 0, 0, 0.6);
+    outline-offset: 2px;
+}
+
+.footer-disclaimer {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 1rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 968px) {
+    body {
+        padding-top: 90px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    nav .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0;
+    }
+
+    nav .nav-links.active {
+        display: flex;
+    }
+
+    nav .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid rgba(139, 0, 0, 0.1);
+    }
+
+    nav .nav-links a,
+    nav .nav-links button {
+        display: block;
+        padding: 1rem 0;
+        border-radius: 0;
+    }
+
+    .dropdown {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        margin-top: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+    }
+
+    nav .nav-links li.open .dropdown {
+        display: block;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .search-input {
+        width: 150px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .footer-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .site-content {
+        padding-top: 2rem;
+    }
+    
+    .horror-home .site-content {
+        padding-top: 0 !important;
+    }
+    
+    article {
+        padding: 1.5rem 1rem;
+    }
+    
+    h1, .entry-title {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .archive-title,
+    .page-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+}
+
+/* === OVERRIDES === */
+.entry-header {
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 0;
+    padding-top: 2rem;
+}
+
+.entry-title {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.post-thumbnail,
+.entry-header .post-thumbnail {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 0;
+}
+
+.site-main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.page-header::before,
+.archive-header::before,
+.entry-header::before,
+.site-header::before,
+h1::before,
+.page-title::before,
+.archive-title::before {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+}
+
+.page-header,
+.archive-header,
+.entry-header {
+    background-image: none !important;
+    position: relative;
+}
+
+.singular .entry-header {
+    background: none !important;
+}
+
+.page-header *::before,
+.archive-header *::before,
+.entry-header *::before {
+    background-image: none !important;
+}
+
+.tag .page-header::before,
+.category .page-header::before,
+.archive .page-header::before {
+    display: none !important;
+}
+
+/* === FILM STRIP BACKGROUNDS FOR IMAGES === */
+/* Larger border with header transparency */
+.wp-post-image,
+.entry-content img,
+article img {
+    background-color: rgba(10, 10, 10, 0.95);
+    background-image: url('https://horrorfilmhistory.com/wp/wp-content/uploads/2025/10/sepiafilm.webp');
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    background-position: center;
+    backdrop-filter: blur(20px);
+    padding: 25px;
+    border: none;
+    display: block;
+    margin-bottom: 3rem;
+}
+
+/* Featured images and thumbnails */
+.post-thumbnail img,
+figure img {
+    background-color: rgba(10, 10, 10, 0.95);
+    background-image: url('https://horrorfilmhistory.com/wp/wp-content/uploads/2025/10/sepiafilm.webp');
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    background-position: center;
+    backdrop-filter: blur(20px);
+    padding: 25px;
+    display: block;
+    margin-bottom: 3rem;
+}
+/* Fix background image containers */
+.post-thumbnail,
+figure.post-thumbnail {
+    margin-top: 120px !important;
+    padding-top: 20px !important;
+}
+
+.singular .entry-header {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Target divs with background images */
+div[style*="background-image"],
+figure[style*="background-image"] {
+    margin-top: 120px !important;
+}
+
+/* Ensure article starts below fixed header */
+body.single article,
+body.page article,
+body.singular article {
+    padding-top: 120px !important;
+}
+
+/* Override any absolute positioning */
+.entry-header > *,
+.post-thumbnail > * {
+    position: relative !important;
+}
+/* Nuclear option - force entire article down */
+body.single main,
+body.page main,
+body.singular main,
+body.single #primary,
+body.page #primary,
+body.singular #primary {
+    padding-top: 150px !important;
+    margin-top: 0 !important;
+}
+
+/* Also target site-main */
+.site-main {
+    padding-top: 150px !important;
+}
+
+/* === FIXES === */
+
+/* Hide duplicated featured image within the content on Pages */
+body.page .entry-content .post-thumbnail {
+    display: none;
+}
